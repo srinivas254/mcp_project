@@ -1,5 +1,7 @@
+from langchain.tools import tool
 
 #query the pgsql database
+@tool
 def query_postgres(query: str):
     """Execute a read-only SQL query against PostgreSQL."""
     return {
@@ -11,6 +13,7 @@ def query_postgres(query: str):
     }
 
 #query the github repo
+@tool
 def search_github(repo: str):
     """Search for repository information on GitHub."""
     return {
@@ -20,6 +23,7 @@ def search_github(repo: str):
     }
 
 #query the sentry application
+@tool
 def get_sentry_errors(project: str):
     """Retrieve recent application errors from Sentry."""
     return {
